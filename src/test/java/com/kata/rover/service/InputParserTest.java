@@ -73,7 +73,7 @@ class InputParserTest {
         var roverInstructionsList = result.roverInstructionsList();
         Assertions.assertNotNull(plateau);
         Assertions.assertNotNull(roverInstructionsList);
-        Assertions.assertEquals(6, plateau.height());
+        Assertions.assertEquals(6, plateau.length());
         Assertions.assertEquals(5, plateau.width());
         Assertions.assertEquals(1, roverInstructionsList.size());
         var roverInstructions = roverInstructionsList.getFirst();
