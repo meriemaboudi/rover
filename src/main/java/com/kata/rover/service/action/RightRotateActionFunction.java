@@ -11,11 +11,18 @@ public class RightRotateActionFunction implements RoverActionFunction {
 
     public static final RightRotateActionFunction INSTANCE = new RightRotateActionFunction();
 
+    private static final Map<Direction, Direction> DIRECTION_MAPPER = Map.of(
+            Direction.NORTH, Direction.EAST,
+            Direction.EAST, Direction.SOUTH,
+            Direction.SOUTH, Direction.WEST,
+            Direction.WEST, Direction.NORTH
+    );
+
     private RightRotateActionFunction() {
     }
 
     @Override
     public void apply(Rover rover, Plateau plateau) {
-        // TODO implement
+        rover.setDirection(DIRECTION_MAPPER.get(rover.getDirection()));
     }
 }

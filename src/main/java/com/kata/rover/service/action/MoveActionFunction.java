@@ -14,6 +14,14 @@ public class MoveActionFunction implements RoverActionFunction {
 
     @Override
     public void apply(Rover rover, Plateau plateau) {
-        // TODO implment
+        var nextPosition = new Position(
+                rover.getPosition().x() + rover.getDirection().getX(),
+                rover.getPosition().y() + rover.getDirection().getY()
+        );
+        if (plateau.isInBoundaries(nextPosition)) {
+            rover.setPosition(nextPosition);
+        } else {
+            // TODO define out of bound strategy, for now just skipping
+        }
     }
 }
